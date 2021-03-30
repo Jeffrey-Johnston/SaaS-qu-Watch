@@ -1,0 +1,29 @@
+<main class="movie-list">
+  <section class="main-container">
+    <section class="movie-card-container">
+      <div (click)="showPopup()" class="movie-image">
+        <img
+          class="header-img"
+          src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <div *ngIf="popup" class="movie-popup">
+      <button class="x-button" (click)="showPopup()">X</button>
+      <p class="movie-title">{{ movieRef.title }}</p>
+      <p class="summary">{{ movieRef.overview }}</p>
+      <p>{{ movieRef.release_date }}   |   Rating: {{ movieRef.vote_average }}</p>
+      <!-- <p>Rating:{{ movieRef.vote_average }}</p> -->
+
+      <button class="popup-button" (click)="emitwatchlistEvent(movieRef)">
+        Add to Watchlist
+      </button>
+      <button class=" popup-button" (click)="emitDeletewatchlistEvent(movieRef)">
+        Remove From Watchlist
+      </button>
+
+    </div>
+  </section>
+</main>

@@ -1,0 +1,22 @@
+.header-container {
+  background-image: linear-gradient(black, gray);
+  width: 100vw;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo-header {
+  width: 300px;
+  height: 91px;
+}
+
+.watchlistLink {
+  text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+
+  
+}

@@ -1,0 +1,50 @@
+<section class="form-body">
+  <main class="form-container">
+    <form
+      class="search-form"
+      #searchForm="ngForm"
+      (input)="emitSearchEvent(searchForm)"
+    >
+      <input
+        class="search-input-field"
+        type="text"
+        name="searchTerm"
+        id="searchTerm"
+        placeholder="Search for a Movie"
+        ngModel
+      />
+    </form>
+
+    <form
+      class="filter-container"
+      #discoverForm="ngForm"
+      (input)="emitDiscoverEvent(discoverForm)"
+    >
+      <select class="input-field" name="genre" id="genre" ngModel>
+        <option value="" disabled selected>Filter by Genre</option>
+        <option *ngFor="let genre of genres" value="{{ genre.id }}">
+          {{ genre.name }}
+        </option>
+      </select>
+
+      <select class="input-field" name="rating" id="rating" ngModel>
+        <option value="" disabled selected>Filter by Rating</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </form>
+  </main>
+  <div class="watch-button-div">
+    <button class="watchlist-button">
+      <a class="watchlist-a" routerLink="/watchlist"> Watchlist</a>
+    </button>
+  </div>
+</section>
